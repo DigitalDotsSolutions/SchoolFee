@@ -2,6 +2,8 @@
 configuration: Release
 cache: 
     - packages -> **\packages.config
-before_build: nuget restore
+before_build: 
+    - cmd: dotnet --version
+    - nuget restore
 build: 
     publish_wap: true
